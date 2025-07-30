@@ -3,6 +3,15 @@ import { type ChangelogEntry } from './types';
 
 export const changelogData: ChangelogEntry[] = [
   {
+    version: '1.4.0',
+    date: 'July 29, 2024',
+    author: '༯𝙎ค૯𝙀𝘿✘🫀',
+    changes: [
+      'Replaced the static theme switcher icons with new animated button graphics.',
+      'Enhanced the visual flair of the header with the new theme toggle animation.'
+    ],
+  },
+  {
     version: '1.2.0',
     date: 'July 28, 2024',
     author: '༯𝙎ค૯𝙀𝘿✘🫀',
