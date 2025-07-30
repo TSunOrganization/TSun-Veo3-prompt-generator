@@ -1,3 +1,11 @@
 {
-  "framework": null
+  "framework": null,
+  "headers": [
+    {
+      "source": "/(.*).tsx",
+      "headers": [
+        { "key": "Content-Type", "value": "application/javascript; charset=utf-8" }
+      ]
+    }
+  ]
 }
