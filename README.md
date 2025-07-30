@@ -32,21 +32,22 @@ The application is built with React, TypeScript, and Tailwind CSS, and it uses t
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **AI**: [Google Gemini API](https://ai.google.dev/docs) (`gemini-2.5-flash`)
 - **Hosting & Backend**: [Vercel](https://vercel.com/) (for hosting and Serverless Functions)
-- **Dependencies**: Uses ES Modules via `esm.sh`, requiring no local `node_modules` or build step for development.
+- **Frontend Dependencies**: Uses ES Modules via `esm.sh`, requiring no local `node_modules` or build step for development.
+- **Backend Dependencies**: Uses [npm](https://www.npmjs.com/) for serverless function dependencies.
 
 ---
 
 ## 🚀 Getting Started
 
-This project is configured to run without a traditional build step, making local development straightforward.
+This project is configured to run without a traditional build step for the frontend, but uses npm for the backend.
 
 ### Prerequisites
 
-You need the [Vercel CLI](https://vercel.com/docs/cli) to run the serverless function locally.
-
-```bash
-npm install -g vercel
-```
+- [Node.js](https://nodejs.org/) (version 18 or later recommended)
+- You need the [Vercel CLI](https://vercel.com/docs/cli) to run the serverless function locally.
+  ```bash
+  npm install -g vercel
+  ```
 
 ### Local Development Setup
 
@@ -56,14 +57,20 @@ npm install -g vercel
     cd your-repo-name
     ```
 
-2.  **Set up your API Key:**
+2.  **Install dependencies:**
+    - The project now includes a `package.json` for server-side dependencies.
+    ```bash
+    npm install
+    ```
+
+3.  **Set up your API Key:**
     - Create a file named `.env.local` in the root of the project.
     - Add your Google Gemini API key to this file:
       ```
       API_KEY="YOUR_GEMINI_API_KEY"
       ```
 
-3.  **Run the development server:**
+4.  **Run the development server:**
     - Use the Vercel CLI to start the local server. This will run your frontend and correctly handle the serverless function in the `/api` directory.
     ```bash
     vercel dev
@@ -93,7 +100,7 @@ Deploying this application is simple and highly recommended via Vercel.
     - Vercel will automatically make this variable available to your Serverless Function.
 
 4.  **Deploy:**
-    - Vercel will automatically detect the project settings. Click the **Deploy** button.
+    - Vercel will automatically detect the `package.json` and install dependencies. Click the **Deploy** button.
     - Your application will be built and deployed. You will receive a live URL for your project.
 
 ---
@@ -117,6 +124,7 @@ Deploying this application is simple and highly recommended via Vercel.
 ├── index.html              # Main HTML file with importmap
 ├── index.tsx               # React root entry point
 ├── metadata.json           # Application metadata
+├── package.json            # <-- NEW: Backend dependencies for Vercel
 ├── types.ts                # TypeScript type definitions
 └── README.md               # This file
 ```
@@ -124,5 +132,3 @@ Deploying this application is simple and highly recommended via Vercel.
 ## 👤 Author
 
 - **༯𝙎ค૯𝙀𝘿✘🫀**
-
----

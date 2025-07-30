@@ -1,5 +1,5 @@
-// Using URL imports to match the project's build-less setup
-import { GoogleGenAI, Type } from "https://esm.sh/@google/genai@^1.11.0";
+// Using a standard package import for the Node.js environment on Vercel
+import { GoogleGenAI, Type } from "@google/genai";
 
 // Schemas and prompt logic are moved here to be self-contained in the serverless function.
 const detailedPromptSchema = {
